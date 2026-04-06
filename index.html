@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karnika | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --bg: #ffffff;
+            --text: #1f2937;
+            --text-light: #6b7280;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .skill-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            display: none;
+        }
+
+        @media (pointer: fine) {
+            .custom-cursor {
+                display: block;
+            }
+        }
+
+        .hero-shape {
+            position: absolute;
+            z-index: -1;
+            filter: blur(80px);
+            opacity: 0.4;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tight text-gray-900">Karnika<span class="text-blue-600">.</span></a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
+                <a href="#about" class="hover:text-blue-600 transition-colors">About</a>
+                <a href="#skills" class="hover:text-blue-600 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-blue-600 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
+            </div>
+            <a href="mailto:karnikakalaivani7205@gmail.com" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">Hire Me</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="hero-shape bg-blue-400 w-96 h-96 -top-20 -left-20"></div>
+        <div class="hero-shape bg-purple-400 w-80 h-80 bottom-0 -right-20"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="reveal">
+                <span class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest text-blue-600 uppercase bg-blue-50 rounded-full">BCA Student & Developer</span>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6 text-gray-900">
+                    Designing <span class="gradient-text">Digital</span> Experiences.
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed">
+                    Hi, I'm Karnika. A passionate BCA student focused on building clean, functional, and user-centric web applications.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" class="bg-gray-900 text-white px-8 py-4 rounded-xl font-medium hover:bg-gray-800 transition-all">View My Work</a>
+                    <a href="#contact" class="border border-gray-200 px-8 py-4 rounded-xl font-medium hover:bg-gray-50 transition-all">Get in Touch</a>
+                </div>
+            </div>
+            <div class="relative reveal" style="transition-delay: 0.2s;">
+                <div class="aspect-square rounded-3xl bg-gray-100 overflow-hidden shadow-2xl">
+                    <img src="https://picsum.photos/seed/karnika/800/800" alt="Karnika" class="w-full h-full object-cover" referrerPolicy="no-referrer">
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-50">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 font-medium uppercase tracking-wider">Education</p>
+                            <p class="text-sm font-bold text-gray-900">BCA Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">About Me</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        I am currently pursuing my Bachelor of Computer Applications (BCA). My journey in tech started with a curiosity for how things work on the web, which evolved into a deep passion for software development.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        I specialize in creating responsive websites and exploring new technologies. I believe in continuous learning and strive to build applications that solve real-world problems.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1">Location</h4>
+                            <p class="text-sm text-gray-600">Tamil Nadu, India</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1">Email</h4>
+                            <p class="text-sm text-gray-600">karnikakalaivani7205@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 reveal" style="transition-delay: 0.2s;">
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center">
+                        <span class="text-4xl font-bold text-blue-600 mb-2">3+</span>
+                        <span class="text-sm text-gray-500 font-medium">Years of Learning</span>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center mt-8">
+                        <span class="text-4xl font-bold text-purple-600 mb-2">10+</span>
+                        <span class="text-sm text-gray-500 font-medium">Projects Done</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Technical Skills</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">As a BCA student, I've built a strong foundation in various programming languages and development tools.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <!-- Skill 1 -->
+                <div class="skill-card bg-white p-6 rounded-3xl border border-gray-100 text-center reveal">
+                    <div class="w-12 h-12 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm mb-1">HTML/CSS</h3>
+                    <p class="text-[10px] text-gray-500">Frontend</p>
+                </div>
+                <!-- Skill 2 -->
+                <div class="skill-card bg-white p-6 rounded-3xl border border-gray-100 text-center reveal" style="transition-delay: 0.1s;">
+                    <div class="w-12 h-12 bg-yellow-50 text-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20M2 12l10-10M2 12l10 10"/></svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm mb-1">JavaScript</h3>
+                    <p class="text-[10px] text-gray-500">Logic</p>
+                </div>
+                <!-- Skill 3 -->
+                <div class="skill-card bg-white p-6 rounded-3xl border border-gray-100 text-center reveal" style="transition-delay: 0.2s;">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm mb-1">C / C++</h3>
+                    <p class="text-[10px] text-gray-500">Core</p>
+                </div>
+                <!-- Skill 4 -->
+                <div class="skill-card bg-white p-6 rounded-3xl border border-gray-100 text-center reveal" style="transition-delay: 0.3s;">
+                    <div class="w-12 h-12 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm mb-1">SQL</h3>
+                    <p class="text-[10px] text-gray-500">Database</p>
+                </div>
+                <!-- Skill 5 -->
+                <div class="skill-card bg-white p-6 rounded-3xl border border-gray-100 text-center reveal" style="transition-delay: 0.4s;">
+                    <div class="w-12 h-12 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm mb-1">Java</h3>
+                    <p class="text-[10px] text-gray-500">Backend</p>
+                </div>
+                <!-- Skill 6 -->
+                <div class="skill-card bg-white p-6 rounded-3xl border border-gray-100 text-center reveal" style="transition-delay: 0.5s;">
+                    <div class="w-12 h-12 bg-cyan-50 text-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-sm mb-1">Python</h3>
+                    <p class="text-[10px] text-gray-500">Scripting</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Featured Projects</h2>
+                    <p class="text-gray-600 max-w-lg">A selection of my academic and personal projects that showcase my technical abilities.</p>
+                </div>
+                <a href="#" class="text-blue-600 font-semibold hover:underline mt-4 md:mt-0 inline-flex items-center gap-2">
+                    View all projects
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="group reveal">
+                    <div class="relative overflow-hidden rounded-3xl mb-6 aspect-video">
+                        <img src="https://picsum.photos/seed/project1/800/450" alt="Project 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerPolicy="no-referrer">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Student Management System</h3>
+                    <p class="text-gray-600 mb-4">A full-featured system built with C++ and SQL to manage student records efficiently.</p>
+                    <div class="flex gap-3">
+                        <span class="px-3 py-1 bg-white border border-gray-200 rounded-full text-xs font-medium text-gray-600">C++</span>
+                        <span class="px-3 py-1 bg-white border border-gray-200 rounded-full text-xs font-medium text-gray-600">SQL</span>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="group reveal" style="transition-delay: 0.2s;">
+                    <div class="relative overflow-hidden rounded-3xl mb-6 aspect-video">
+                        <img src="https://picsum.photos/seed/project2/800/450" alt="Project 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerPolicy="no-referrer">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Personal Portfolio Website</h3>
+                    <p class="text-gray-600 mb-4">A responsive portfolio website designed with modern UI/UX principles using HTML and CSS.</p>
+                    <div class="flex gap-3">
+                        <span class="px-3 py-1 bg-white border border-gray-200 rounded-full text-xs font-medium text-gray-600">HTML</span>
+                        <span class="px-3 py-1 bg-white border border-gray-200 rounded-full text-xs font-medium text-gray-600">Tailwind</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24">
+        <div class="max-w-4xl mx-auto px-6 text-center reveal">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8 text-gray-900">Let's Work Together</h2>
+            <p class="text-xl text-gray-600 mb-12">I'm currently looking for internship opportunities. If you have a project in mind or just want to say hi, feel free to reach out!</p>
+            
+            <div class="inline-block group">
+                <a href="mailto:karnikakalaivani7205@gmail.com" class="text-2xl md:text-4xl font-bold text-blue-600 border-b-4 border-blue-100 hover:border-blue-600 transition-all pb-2">
+                    karnikakalaivani7205@gmail.com
+                </a>
+            </div>
+
+            <div class="mt-20 flex justify-center space-x-8">
+                <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors">LinkedIn</a>
+                <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors">GitHub</a>
+                <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors">Twitter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-sm text-gray-500">© 2026 Karnika. All rights reserved.</p>
+            <p class="text-sm text-gray-500">Designed with ❤️ by Karnika</p>
+        </div>
+    </footer>
+
+    <script>
+        // Custom Cursor
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        document.addEventListener('mousedown', () => cursor.style.transform = 'scale(0.8)');
+        document.addEventListener('mouseup', () => cursor.style.transform = 'scale(1)');
+
+        // Reveal on Scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            for (let i = 0; i < revealElements.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = revealElements[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    revealElements[i].classList.add('active');
+                }
+            }
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        // Initial check
+        revealOnScroll();
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
