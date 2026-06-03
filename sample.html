@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FF Selection</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#111,#ff6a00);
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+.container{
+    max-width:500px;
+    margin:auto;
+    background:rgba(255,255,255,0.1);
+    padding:20px;
+    border-radius:15px;
+    backdrop-filter: blur(10px);
+}
+
+h1{
+    color:#ffd700;
+}
+
+select{
+    width:80%;
+    padding:10px;
+    margin:10px 0;
+    border:none;
+    border-radius:8px;
+}
+
+button{
+    padding:10px 25px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.yes{
+    background:#28a745;
+    color:white;
+}
+
+.no{
+    background:#dc3545;
+    color:white;
+    cursor:not-allowed;
+}
+
+#result{
+    margin-top:20px;
+    font-size:18px;
+    color:#ffd700;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🔥 Free Fire Selection 🔥</h1>
+
+    <h3>Select Your Gun</h3>
+    <select id="gun">
+        <option>MP40</option>
+        <option>M1887</option>
+        <option>AK47</option>
+        <option>AWM</option>
+    </select>
+
+    <h3>Select Your Character</h3>
+    <select id="character">
+        <option>Alok</option>
+        <option>Chrono</option>
+        <option>Skyler</option>
+        <option>Kelly</option>
+    </select>
+
+    <h3>RUMI PRO PLAYER?</h3>
+
+    <button class="yes" onclick="showSelection()">YES</button>
+    <button class="no" disabled>NO</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function showSelection(){
+    let gun = document.getElementById("gun").value;
+    let character = document.getElementById("character").value;
+
+    document.getElementById("result").innerHTML =
+    `✅ Selected Gun: <b>${gun}</b><br>
+     ✅ Selected Character: <b>${character}</b><br>
+     🎮 Match Ready!`;
+}
+</script>
+
+</body>
+</html>
